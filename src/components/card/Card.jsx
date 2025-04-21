@@ -1,12 +1,16 @@
 import React from 'react'
 
-const Card = () => {
+const Card = ({image,title,desc}) => {
   return (
-    <div className='w-[250px]  bg-gray-100 p-2 m-5 border-2'>
-        <img src="https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/kadhai-paneer.86f5d60ae5c4f1e7f41b89be36aa275d.1.jpg?width=251" alt="pizza" className='w-full ' />
-        <h1 className='my-4 font-semibold px-1'>kadai Paneer</h1>
-        <p className='my-4 px-1'>Take your taste buds on a joyride with juicy marinated paneer, capsicum, and onion, all coated in flavorful Kadhai sauce</p>
-        <button className='text-center bg-green-600 text-white w-full py-2.5 rounded'>View More</button>
+    <div className="w-full max-w-[250px] bg-white border  flex flex-col  h-[420px]">
+      <img src={image} alt={title} className="h-[150px] w-full object-cover rounded-t" />
+      <div className="flex-1 px-3 py-2">
+        <h2 className="font-semibold text-lg mb-2">{title}</h2>
+        <p className="text-sm text-gray-700">{desc}</p>
+      </div>
+      <button className="bg-green-600 text-white p-2.5 w-full rounded-b hover:bg-green-700 transition">
+        View more
+      </button>
     </div>
   )
 }

@@ -1,16 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from './components/Header/Header'
 import Nav from './components/Nav/Nav'
 import Info from './components/info/Info'
-import Card from './components/card/Card'
 
 const App = () => {
+   const [activeTab,setActiveTab]=useState('pizzas')
   return (
    <div className='w-[1200px] mx-auto p-5'>
      <Header/>
-     <Nav/>
-     <Info/>
-     <Card/>
+     <Nav activeTab={activeTab} setActiveTab={setActiveTab}/>
+     <Info activeTab={activeTab}/>
+     
    </div>
   )
 }
